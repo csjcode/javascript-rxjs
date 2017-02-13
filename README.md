@@ -11,4 +11,45 @@ Github : https://github.com/ReactiveX/rxjs
 
 Website: A reactive programming library for JavaScript http://reactivex.io/rxjs
 
-### Environment
+### Environment - CDN include in HTML file
+
+You can include in an html file:
+See for include: https://cdnjs.com/libraries/rxjs
+
+https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.0.1/Rx.min.js
+
+
+### Environment (using this) - RxJS Boiler
+
+source: https://github.com/bradtraversy/rxjs_boiler
+
+* Clone and npm install
+
+* Compile
+
+* To compile all js to dist/app.bundle.js
+
+`$ webpack`
+
+* To watch run
+
+`$ webpack -w`
+
+* Run
+
+* Install live-server globally
+
+`$ npm install live-server -g`
+
+`$ npm start`
+
+Visit http://localhost:8000
+
+
+
+
+
+
+
+
+.
