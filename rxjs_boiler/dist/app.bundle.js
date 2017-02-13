@@ -56,7 +56,18 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	console.log('RxJS Boiler Running...');
+	// console.log('RxJS Boiler Running...');
+
+	var btn = (0, _jquery2.default)('#btn');
+	var btnStream$ = _Rx2.default.Observable.fromEvent(btn, 'click');
+
+	btnStream$.subscribe(function (e) {
+	  console.log('Clicked');
+	}, function (err) {
+	  console.log(err);
+	}, function () {
+	  console.log('Completed');
+	});
 
 /***/ },
 /* 1 */

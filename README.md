@@ -61,6 +61,29 @@ import Rx from 'rxjs/Rx';
 console.log('RxJS Boiler Running...');
 ```
 
+### Create an Observable sequence from UI Events
+
+* Create a button in index.js with an id of btn `<button id="btn"></button>`
+```javascript
+const btn = $('#btn');
+const btnStream$ = Rx.Observable.fromEvent();
+```
+
+* It's good practive to have the $ on the end so we know it's a datastream Observable
+* Next we add some parameters-- the element, type of event we want,
+
+`const btnStream$ = Rx.Observable.fromEvent(btn, 'click');`
+
+* That's all there is to creating an observable, HOWEVER, we still have to SUBSCRIBE to it.
+* The subscribe takes 3 functions: return stream, return errors, run if complete
+
+```
+btnStream$.subscribe(
+  function(e){ console.log('Clicked') },
+  function(err){ console.log(err) },
+  function(){ console.log('Completed') },
+});
+```
 
 
 
