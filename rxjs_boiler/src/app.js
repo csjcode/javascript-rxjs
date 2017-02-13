@@ -2,15 +2,31 @@ import $ from 'jquery';
 import Rx from 'rxjs/Rx';
 // console.log('RxJS Boiler Running...');
 
-const set = new Set(['Hello', 44, {title:"My title"}])
 
-const set$ = Rx.Observable.from(set);
+// // ------------------------------ PREVIOUS FOR MAP OBSERVABLES
 
-set$.subscribe(
+
+const map = new Map([[1,2],[3,2],[3,4],[5,7]]);
+const map$ = Rx.Observable.from(map);
+
+map$.subscribe(
   v => { console.log(v); },
   err => { console.log(err); },
   complete => { console.log('completed'); }
 );
+
+
+
+// // ------------------------------ PREVIOUS FOR SET OBSERVABLES
+//
+// const set = new Set(['Hello', 44, {title:"My title"}]);
+// const set$ = Rx.Observable.from(set);
+//
+// set$.subscribe(
+//   v => { console.log(v); },
+//   err => { console.log(err); },
+//   complete => { console.log('completed'); }
+// );
 
 // // ------------------------------ PREVIOUS FOR ARRAY OBSERVABLES
 // const numbers = [33, 44, 56, 89, 104];

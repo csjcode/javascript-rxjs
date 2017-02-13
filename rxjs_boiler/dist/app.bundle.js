@@ -58,17 +58,31 @@
 
 	// console.log('RxJS Boiler Running...');
 
-	var set = new Set(['Hello', 44, { title: "My title" }]);
 
-	var set$ = _Rx2.default.Observable.from(set);
+	// // ------------------------------ PREVIOUS FOR MAP OBSERVABLES
 
-	set$.subscribe(function (v) {
+
+	var map = new Map([[1, 2], [3, 2], [3, 4], [5, 7]]);
+	var map$ = _Rx2.default.Observable.from(map);
+
+	map$.subscribe(function (v) {
 	  console.log(v);
 	}, function (err) {
 	  console.log(err);
 	}, function (complete) {
 	  console.log('completed');
 	});
+
+	// // ------------------------------ PREVIOUS FOR SET OBSERVABLES
+	//
+	// const set = new Set(['Hello', 44, {title:"My title"}]);
+	// const set$ = Rx.Observable.from(set);
+	//
+	// set$.subscribe(
+	//   v => { console.log(v); },
+	//   err => { console.log(err); },
+	//   complete => { console.log('completed'); }
+	// );
 
 	// // ------------------------------ PREVIOUS FOR ARRAY OBSERVABLES
 	// const numbers = [33, 44, 56, 89, 104];
