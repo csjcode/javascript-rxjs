@@ -1,5 +1,8 @@
 # javascript-rxjs
-Demos of RxJS extension
+Demos of RxJS extensions
+
+-------------------------------------------------------------
+
 
 ### Source - Video and Github
 
@@ -11,12 +14,17 @@ Github : https://github.com/ReactiveX/rxjs
 
 Website: A reactive programming library for JavaScript http://reactivex.io/rxjs
 
+-------------------------------------------------------------
+
+
 ### Environment - CDN include in HTML file
 
 You can include in an html file:
 See for include: https://cdnjs.com/libraries/rxjs
 
 https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.0.1/Rx.min.js
+
+-------------------------------------------------------------
 
 
 ### Environment (using this) - RxJS Boiler
@@ -52,6 +60,9 @@ This will create folder `rxjs_boiler\dist\app.bundle.js`
 Visit http://localhost:8000
 
 
+-------------------------------------------------------------
+
+
 ### src/app.js
 
 ```javascript
@@ -61,7 +72,10 @@ import Rx from 'rxjs/Rx';
 console.log('RxJS Boiler Running...');
 ```
 
-### Create an Observable sequence from UI Events
+-------------------------------------------------------------
+
+
+## Create an Observable sequence from UI Events
 
 * Create a button in index.js with an id of btn `<button id="btn"></button>`
 ```javascript
@@ -113,12 +127,45 @@ inputStream$.subscribe(
 
 ```javascript
 const moveStream$ = Rx.Observable.fromEvent(document, 'mousemove');
-inputStream$.subscribe(
-  function(e){ output.append('X: ' + e.clientX + 'Y: ' + e.clientY) },
+moveStream$.subscribe(
+  function(e){ output2.html('<h3>X: ' + e.clientX + 'Y: ' + e.clientY +'</h3>') },
   function(err){ console.log(err); },
   function(){ console.log('Completed')
 });
 ```
+
+-------------------------------------------------------------
+
+## Observables from Arrays
+
+* We're going to subscribe to an observable that is an array of numbers and when it is finished it will say "Completed"
+
+```javascript
+const numbers = [33, 44, 56, 89, 104];
+
+const numbers$ = Rx.Observable.from(numbers);
+
+numbers$.subscribe(
+  v => { console.log(v); },
+  err => { console.log(err); },
+  complete => { console.log('completed'); }
+);
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -58,40 +58,48 @@
 
 	// console.log('RxJS Boiler Running...');
 
-	var btn = (0, _jquery2.default)('#btn');
-	var input = (0, _jquery2.default)('#input');
-	var output = (0, _jquery2.default)('#output');
-	var output2 = (0, _jquery2.default)('#output2');
+	var numbers = [33, 44, 56, 89, 104];
 
-	var btnStream$ = _Rx2.default.Observable.fromEvent(btn, 'click');
+	var numbers$ = _Rx2.default.Observable.from(numbers);
 
-	btnStream$.subscribe(function (e) {
-	  console.log(e.target.innerHTML);
+	numbers$.subscribe(function (v) {
+	  console.log(v);
 	}, function (err) {
 	  console.log(err);
-	}, function () {
-	  console.log('Completed');
+	}, function (complete) {
+	  console.log('completed');
 	});
 
-	var inputStream$ = _Rx2.default.Observable.fromEvent(input, 'keyup');
-
-	inputStream$.subscribe(function (e) {
-	  output.html(e.target.value);
-	}, function (err) {
-	  console.log(err);
-	}, function () {
-	  console.log('Completed');
-	});
-
-	var moveStream$ = _Rx2.default.Observable.fromEvent(document, 'mousemove');
-
-	moveStream$.subscribe(function (e) {
-	  output2.html('<h3>X: ' + e.clientX + 'Y: ' + e.clientY + '</h3>');
-	}, function (err) {
-	  console.log(err);
-	}, function () {
-	  console.log('Completed');
-	});
+	// ------------------------------ PREVIOUS FOR EVENT OBSERVABLES
+	// const btn = $('#btn');
+	// const input = $('#input');
+	// const output = $('#output');
+	// const output2 = $('#output2');
+	//
+	// const btnStream$ = Rx.Observable.fromEvent(btn, 'click');
+	//
+	// btnStream$.subscribe(
+	//   function(e){ console.log(e.target.innerHTML); },
+	//   function(err){ console.log(err); },
+	//   function(){ console.log('Completed')
+	// });
+	//
+	// const inputStream$ = Rx.Observable.fromEvent(input, 'keyup');
+	//
+	// inputStream$.subscribe(
+	//   function(e){ output.html(e.target.value) },
+	//   function(err){ console.log(err); },
+	//   function(){ console.log('Completed')
+	// });
+	//
+	//
+	// const moveStream$ = Rx.Observable.fromEvent(document, 'mousemove');
+	//
+	// moveStream$.subscribe(
+	//   function(e){ output2.html('<h3>X: ' + e.clientX + 'Y: ' + e.clientY +'</h3>') },
+	//   function(err){ console.log(err); },
+	//   function(){ console.log('Completed')
+	// });
 
 /***/ },
 /* 1 */
