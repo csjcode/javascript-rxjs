@@ -25,11 +25,17 @@ source: https://github.com/bradtraversy/rxjs_boiler
 
 * Clone and npm install
 
+* Install webpack globally
+
+`npm -g install webpack﻿`
+
 * Compile
 
 * To compile all js to dist/app.bundle.js
 
 `$ webpack`
+
+This will create folder `rxjs_boiler\dist\app.bundle.js`
 
 * To watch run
 
@@ -46,6 +52,14 @@ source: https://github.com/bradtraversy/rxjs_boiler
 Visit http://localhost:8000
 
 
+### src/app.js
+
+```javascript
+import $ from 'jquery';
+import Rx from 'rxjs/Rx';
+
+console.log('RxJS Boiler Running...');
+```
 
 
 
