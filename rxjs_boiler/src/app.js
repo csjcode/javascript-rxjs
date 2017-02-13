@@ -12,7 +12,20 @@ numbers$.subscribe(
   complete => { console.log('completed'); }
 );
 
+const posts = [
+  { title: "My title", body: "This is the body of the article"},
+  { title: "My title 2", body: "Put your text here"},
+  { title: "Superman was here", body: "Put your concert here"},
+  { title: "Fragle Rock is cool", body: "Put your garden over here"},
+];
 
+const posts$ = Rx.Observable.from(posts);
+
+posts$.subscribe(
+  post => { console.log(post); $('#posts').append('<li><h3>' + post.title  +  '</h3><p>' + post.body + '</p></li>'); },
+  err => { console.log(err); },
+  complete => { console.log('completed'); }
+);
 
 
 // ------------------------------ PREVIOUS FOR EVENT OBSERVABLES

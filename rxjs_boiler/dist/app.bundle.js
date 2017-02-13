@@ -70,6 +70,18 @@
 	  console.log('completed');
 	});
 
+	var posts = [{ title: "My title", body: "This is the body of the article" }, { title: "My title 2", body: "Put your text here" }, { title: "Superman was here", body: "Put your concert here" }, { title: "Fragle Rock is cool", body: "Put your garden over here" }];
+
+	var posts$ = _Rx2.default.Observable.from(posts);
+
+	posts$.subscribe(function (post) {
+	  console.log(post);(0, _jquery2.default)('#posts').append('<li><h3>' + post.title + '</h3><p>' + post.body + '</p></li>');
+	}, function (err) {
+	  console.log(err);
+	}, function (complete) {
+	  console.log('completed');
+	});
+
 	// ------------------------------ PREVIOUS FOR EVENT OBSERVABLES
 	// const btn = $('#btn');
 	// const input = $('#input');
