@@ -61,6 +61,7 @@
 	var btn = (0, _jquery2.default)('#btn');
 	var input = (0, _jquery2.default)('#input');
 	var output = (0, _jquery2.default)('#output');
+	var output2 = (0, _jquery2.default)('#output2');
 
 	var btnStream$ = _Rx2.default.Observable.fromEvent(btn, 'click');
 
@@ -75,7 +76,17 @@
 	var inputStream$ = _Rx2.default.Observable.fromEvent(input, 'keyup');
 
 	inputStream$.subscribe(function (e) {
-	  output.append(e.target.value);
+	  output.html(e.target.value);
+	}, function (err) {
+	  console.log(err);
+	}, function () {
+	  console.log('Completed');
+	});
+
+	var moveStream$ = _Rx2.default.Observable.fromEvent(document, 'mousemove');
+
+	moveStream$.subscribe(function (e) {
+	  output2.html('<h3>X: ' + e.clientX + 'Y: ' + e.clientY + '</h3>');
 	}, function (err) {
 	  console.log(err);
 	}, function () {

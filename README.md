@@ -109,7 +109,16 @@ inputStream$.subscribe(
 
 * Next what we could do is put that in the Body of the HTML document, inside a div.
 
+* Last one-- the Mouse move event
 
+```javascript
+const moveStream$ = Rx.Observable.fromEvent(document, 'mousemove');
+inputStream$.subscribe(
+  function(e){ output.append('X: ' + e.clientX + 'Y: ' + e.clientY) },
+  function(err){ console.log(err); },
+  function(){ console.log('Completed')
+});
+```
 
 
 
