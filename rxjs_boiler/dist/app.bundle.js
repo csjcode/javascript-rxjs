@@ -59,10 +59,22 @@
 	// console.log('RxJS Boiler Running...');
 
 	var btn = (0, _jquery2.default)('#btn');
+	var input = (0, _jquery2.default)('#input');
+
 	var btnStream$ = _Rx2.default.Observable.fromEvent(btn, 'click');
 
 	btnStream$.subscribe(function (e) {
-	  console.log('Clicked');
+	  console.log(e.target.innerHTML);
+	}, function (err) {
+	  console.log(err);
+	}, function () {
+	  console.log('Completed');
+	});
+
+	var inputStream$ = _Rx2.default.Observable.fromEvent(input, 'keyup');
+
+	inputStream$.subscribe(function (e) {
+	  console.log(e.currentTarget.value);
 	}, function (err) {
 	  console.log(err);
 	}, function () {

@@ -85,6 +85,30 @@ btnStream$.subscribe(
 });
 ```
 
+* Now lets get the event object:
+` function(e){ console.log(e); },`
+* We get an object, click on target to get values of the button.
+* For example to get innerHtml we ca console.log e.target.innerHTML
+
+* Now, let's create an input text box
+* Copy/paste the previous Observable/Subscribe pattern and change to input and keyup, and change innerHTML to e
+* Keep in mind--- in Subscrbe, only the first function is needed. Some events may not complete.
+
+```javascript
+const inputStream$ = Rx.Observable.fromEvent(input, 'keyup');
+
+inputStream$.subscribe(
+  function(e){ console.log(e); },
+  function(err){ console.log(err); },
+  function(){ console.log('Completed')
+});
+```
+* That works but just gives objects on each keypress.
+* For full value change to `function(e){ console.log(e.currentTarget.value); },`
+
+
+
+
 
 
 
