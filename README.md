@@ -152,6 +152,11 @@ numbers$.subscribe(
 );
 ```
 
+* That is working...
+
+* Next we are going to cereate a set.
+* A set is an array with any type of datastream
+* 
 
 
 

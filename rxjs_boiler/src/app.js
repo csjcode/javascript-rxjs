@@ -2,30 +2,41 @@ import $ from 'jquery';
 import Rx from 'rxjs/Rx';
 // console.log('RxJS Boiler Running...');
 
-const numbers = [33, 44, 56, 89, 104];
+const set = new Set(['Hello', 44, {title:"My title"}])
 
-const numbers$ = Rx.Observable.from(numbers);
+const set$ = Rx.Observable.from(set);
 
-numbers$.subscribe(
+set$.subscribe(
   v => { console.log(v); },
   err => { console.log(err); },
   complete => { console.log('completed'); }
 );
 
-const posts = [
-  { title: "My title", body: "This is the body of the article"},
-  { title: "My title 2", body: "Put your text here"},
-  { title: "Superman was here", body: "Put your concert here"},
-  { title: "Fragle Rock is cool", body: "Put your garden over here"},
-];
-
-const posts$ = Rx.Observable.from(posts);
-
-posts$.subscribe(
-  post => { console.log(post); $('#posts').append('<li><h3>' + post.title  +  '</h3><p>' + post.body + '</p></li>'); },
-  err => { console.log(err); },
-  complete => { console.log('completed'); }
-);
+// // ------------------------------ PREVIOUS FOR ARRAY OBSERVABLES
+// const numbers = [33, 44, 56, 89, 104];
+//
+// const numbers$ = Rx.Observable.from(numbers);
+//
+// numbers$.subscribe(
+//   v => { console.log(v); },
+//   err => { console.log(err); },
+//   complete => { console.log('completed'); }
+// );
+//
+// const posts = [
+//   { title: "My title", body: "This is the body of the article"},
+//   { title: "My title 2", body: "Put your text here"},
+//   { title: "Superman was here", body: "Put your concert here"},
+//   { title: "Fragle Rock is cool", body: "Put your garden over here"},
+// ];
+//
+// const posts$ = Rx.Observable.from(posts);
+//
+// posts$.subscribe(
+//   post => { console.log(post); $('#posts').append('<li><h3>' + post.title  +  '</h3><p>' + post.body + '</p></li>'); },
+//   err => { console.log(err); },
+//   complete => { console.log('completed'); }
+// );
 
 
 // ------------------------------ PREVIOUS FOR EVENT OBSERVABLES

@@ -58,11 +58,11 @@
 
 	// console.log('RxJS Boiler Running...');
 
-	var numbers = [33, 44, 56, 89, 104];
+	var set = new Set(['Hello', 44, { title: "My title" }]);
 
-	var numbers$ = _Rx2.default.Observable.from(numbers);
+	var set$ = _Rx2.default.Observable.from(set);
 
-	numbers$.subscribe(function (v) {
+	set$.subscribe(function (v) {
 	  console.log(v);
 	}, function (err) {
 	  console.log(err);
@@ -70,17 +70,32 @@
 	  console.log('completed');
 	});
 
-	var posts = [{ title: "My title", body: "This is the body of the article" }, { title: "My title 2", body: "Put your text here" }, { title: "Superman was here", body: "Put your concert here" }, { title: "Fragle Rock is cool", body: "Put your garden over here" }];
+	// // ------------------------------ PREVIOUS FOR ARRAY OBSERVABLES
+	// const numbers = [33, 44, 56, 89, 104];
+	//
+	// const numbers$ = Rx.Observable.from(numbers);
+	//
+	// numbers$.subscribe(
+	//   v => { console.log(v); },
+	//   err => { console.log(err); },
+	//   complete => { console.log('completed'); }
+	// );
+	//
+	// const posts = [
+	//   { title: "My title", body: "This is the body of the article"},
+	//   { title: "My title 2", body: "Put your text here"},
+	//   { title: "Superman was here", body: "Put your concert here"},
+	//   { title: "Fragle Rock is cool", body: "Put your garden over here"},
+	// ];
+	//
+	// const posts$ = Rx.Observable.from(posts);
+	//
+	// posts$.subscribe(
+	//   post => { console.log(post); $('#posts').append('<li><h3>' + post.title  +  '</h3><p>' + post.body + '</p></li>'); },
+	//   err => { console.log(err); },
+	//   complete => { console.log('completed'); }
+	// );
 
-	var posts$ = _Rx2.default.Observable.from(posts);
-
-	posts$.subscribe(function (post) {
-	  console.log(post);(0, _jquery2.default)('#posts').append('<li><h3>' + post.title + '</h3><p>' + post.body + '</p></li>');
-	}, function (err) {
-	  console.log(err);
-	}, function (complete) {
-	  console.log('completed');
-	});
 
 	// ------------------------------ PREVIOUS FOR EVENT OBSERVABLES
 	// const btn = $('#btn');
