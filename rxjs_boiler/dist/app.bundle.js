@@ -60,6 +60,7 @@
 
 	var btn = (0, _jquery2.default)('#btn');
 	var input = (0, _jquery2.default)('#input');
+	var output = (0, _jquery2.default)('#output');
 
 	var btnStream$ = _Rx2.default.Observable.fromEvent(btn, 'click');
 
@@ -74,7 +75,7 @@
 	var inputStream$ = _Rx2.default.Observable.fromEvent(input, 'keyup');
 
 	inputStream$.subscribe(function (e) {
-	  console.log(e.currentTarget.value);
+	  output.append(e.target.value);
 	}, function (err) {
 	  console.log(err);
 	}, function () {

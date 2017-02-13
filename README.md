@@ -105,8 +105,9 @@ inputStream$.subscribe(
 ```
 * That works but just gives objects on each keypress.
 * For full value change to `function(e){ console.log(e.currentTarget.value); },`
+* also we can get it from e.targetValue
 
-
+* Next what we could do is put that in the Body of the HTML document, inside a div.
 
 
 

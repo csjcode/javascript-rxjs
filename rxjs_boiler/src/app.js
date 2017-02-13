@@ -4,6 +4,7 @@ import Rx from 'rxjs/Rx';
 
 const btn = $('#btn');
 const input = $('#input');
+const output = $('#output');
 
 const btnStream$ = Rx.Observable.fromEvent(btn, 'click');
 
@@ -16,7 +17,7 @@ btnStream$.subscribe(
 const inputStream$ = Rx.Observable.fromEvent(input, 'keyup');
 
 inputStream$.subscribe(
-  function(e){ console.log(e.currentTarget.value); },
+  function(e){ output.append(e.target.value) },
   function(err){ console.log(err); },
   function(){ console.log('Completed')
 });
