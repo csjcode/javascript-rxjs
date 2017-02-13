@@ -79,9 +79,9 @@ const btnStream$ = Rx.Observable.fromEvent();
 
 ```
 btnStream$.subscribe(
-  function(e){ console.log('Clicked') },
-  function(err){ console.log(err) },
-  function(){ console.log('Completed') },
+  function(e){ console.log('Clicked'); },
+  function(err){ console.log(err); },
+  function(){ console.log('Completed')
 });
 ```
 
